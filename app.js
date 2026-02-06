@@ -124,7 +124,7 @@ const increment = (amt) => {
 
 const feedback = () => {
   if ($("toggle-vibrate").checked && navigator.vibrate) {
-    navigator.vibrate(15);
+    navigator.vibrate([10, 20, 10]);
   }
   if ($("toggle-sound").checked) {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -284,6 +284,7 @@ const init = () => {
 
   $("btn-export").addEventListener("click", exportData);
   $("btn-reset").addEventListener("click", resetDay);
+  $("btn-reset-today").addEventListener("click", resetDay);
 
   $("btn-save-note").addEventListener("click", saveNotes);
 
