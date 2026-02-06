@@ -11,6 +11,12 @@
 </head>
 <body>
   <div class="grain"></div>
+  <div class="banner">
+    <span>|| जय श्री राम ||</span>
+    <div class="deity">
+      <img src="https://imgs.search.brave.com/Muryb9MZ35TJ6LI1omC9aCBdFTNBZGXojaX0PjklC-Y/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9waG90/b3NraW5nLm5ldC93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNC8w/NS9iYWpyYW5nYmFs/aS1kcC1pbWFnZXMt/cGhvdG9zLXBpY3R1/cmVzXzYwLndlYnA" alt="Lord Hanuman" />
+    </div>
+  </div>
   <header class="topbar">
     <div class="brand">
       <span class="brand__mark">ॐ</span>
@@ -38,6 +44,7 @@
             <button id="btn-minus" class="pill">-</button>
             <button id="btn-add" class="pill primary">+1</button>
             <button id="btn-add10" class="pill">+10</button>
+            <button id="btn-reset-today" class="pill">Reset</button>
           </div>
           <div class="counter__extras">
             <label class="toggle">
@@ -45,7 +52,7 @@
               <span>Sound</span>
             </label>
             <label class="toggle">
-              <input id="toggle-vibrate" type="checkbox" />
+              <input id="toggle-vibrate" type="checkbox" checked />
               <span>Vibrate</span>
             </label>
             <label class="toggle">
@@ -57,6 +64,7 @@
               <input id="auto-pace" type="range" min="30" max="300" value="120" />
               <span id="auto-pace-label">120 bpm</span>
             </div>
+            <div class="hint">Haptics work when supported by your device and browser.</div>
           </div>
         </div>
       </div>
@@ -130,7 +138,7 @@
     </section>
   </main>
 
-  <footer class="footer">Made for peaceful practice. Your data stays in your browser.</footer>
+  <footer class="footer">Made for peaceful practice. Your data stays in your browser.<br />Ashish Sherkar</footer>
 
   <audio id="beep" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAIlYAAB9AAACABAAZGF0YQAAAAA=" preload="auto"></audio>
   <script src="app.js"></script>
