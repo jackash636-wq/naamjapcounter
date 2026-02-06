@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Naam Jaap Counter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;600;700;900&family=Spline+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand__mark">ॐ</span>
+      <div>
+        <div class="brand__title">Naam Jaap Counter</div>
+        <div class="brand__tag">Focus. Flow. Faith.</div>
+      </div>
+    </div>
+    <div class="topbar__actions">
+      <button id="btn-reset" class="ghost">Reset Day</button>
+      <button id="btn-export" class="ghost">Export</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="panel hero">
+      <div class="hero__left">
+        <h1>Count with calm. Grow with consistency.</h1>
+        <p>Track your daily jaap, maintain streaks, and celebrate milestones with a serene, focused dashboard.</p>
+
+        <div class="counter">
+          <div class="counter__value" id="count">0</div>
+          <div class="counter__label">Total Jaap Today</div>
+          <div class="counter__controls">
+            <button id="btn-minus" class="pill">-</button>
+            <button id="btn-add" class="pill primary">+1</button>
+            <button id="btn-add10" class="pill">+10</button>
+          </div>
+          <div class="counter__extras">
+            <label class="toggle">
+              <input id="toggle-sound" type="checkbox" checked />
+              <span>Sound</span>
+            </label>
+            <label class="toggle">
+              <input id="toggle-vibrate" type="checkbox" />
+              <span>Vibrate</span>
+            </label>
+            <label class="toggle">
+              <input id="toggle-auto" type="checkbox" />
+              <span>Auto-Count</span>
+            </label>
+            <div class="auto">
+              <span>Auto pace</span>
+              <input id="auto-pace" type="range" min="30" max="300" value="120" />
+              <span id="auto-pace-label">120 bpm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="card goal">
+          <div class="card__title">Daily Goal</div>
+          <div class="goal__value" id="goal">108</div>
+          <div class="goal__controls">
+            <input id="goal-input" type="number" min="1" value="108" />
+            <button id="btn-set-goal" class="pill">Set Goal</button>
+          </div>
+          <div class="goal__progress">
+            <div class="progress__bar" id="goal-bar"></div>
+          </div>
+          <div class="goal__meta">
+            <span id="goal-percent">0%</span>
+            <span id="goal-remaining">108 remaining</span>
+          </div>
+        </div>
+
+        <div class="card session">
+          <div class="card__title">Session Timer</div>
+          <div class="timer" id="timer">00:00:00</div>
+          <div class="timer__controls">
+            <button id="btn-start" class="pill primary">Start</button>
+            <button id="btn-pause" class="pill">Pause</button>
+            <button id="btn-stop" class="pill">Stop</button>
+          </div>
+          <div class="session__meta">
+            <div><span class="label">Avg pace</span> <span id="pace">0</span> /min</div>
+            <div><span class="label">Best streak</span> <span id="best-streak">0</span> days</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel stats">
+      <div class="card">
+        <div class="card__title">Today</div>
+        <div class="stat" id="stat-today">0</div>
+      </div>
+      <div class="card">
+        <div class="card__title">This Week</div>
+        <div class="stat" id="stat-week">0</div>
+      </div>
+      <div class="card">
+        <div class="card__title">Streak</div>
+        <div class="stat" id="stat-streak">0</div>
+      </div>
+      <div class="card">
+        <div class="card__title">All Time</div>
+        <div class="stat" id="stat-all">0</div>
+      </div>
+    </section>
+
+    <section class="panel insights">
+      <div class="card wide">
+        <div class="card__title">7-Day Flow</div>
+        <canvas id="chart" height="120"></canvas>
+      </div>
+      <div class="card">
+        <div class="card__title">Milestones</div>
+        <ul id="milestones" class="list"></ul>
+      </div>
+      <div class="card">
+        <div class="card__title">Notes</div>
+        <textarea id="notes" placeholder="Write reflections for today..."></textarea>
+        <button id="btn-save-note" class="pill">Save Note</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">Made for peaceful practice. Your data stays in your browser.</footer>
+
+  <audio id="beep" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAIlYAAB9AAACABAAZGF0YQAAAAA=" preload="auto"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
